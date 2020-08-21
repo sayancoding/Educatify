@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assignments",
+  "info": {
+    "name": "assignments"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "publish_date": {
+      "type": "datetime"
+    },
+    "finishby_date": {
+      "type": "datetime"
+    },
+    "uploaded_file": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "class": {
+      "via": "assignments",
+      "model": "classes"
+    },
+    "students": {
+      "via": "assignments",
+      "collection": "students"
+    }
+  }
+}

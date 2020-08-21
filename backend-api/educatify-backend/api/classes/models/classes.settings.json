@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "classes",
+  "info": {
+    "name": "classes"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "invitition_token": {
+      "type": "string"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "classes"
+    },
+    "assignments": {
+      "collection": "assignments",
+      "via": "class"
+    },
+    "students": {
+      "via": "classes",
+      "collection": "students"
+    }
+  }
+}

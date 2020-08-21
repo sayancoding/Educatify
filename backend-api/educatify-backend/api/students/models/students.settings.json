@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "name": "students"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "roll_no": {
+      "type": "string"
+    },
+    "department": {
+      "type": "string"
+    },
+    "batch_of": {
+      "type": "date"
+    },
+    "email": {
+      "type": "email"
+    },
+    "password": {
+      "type": "password"
+    },
+    "avatar": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "dob": {
+      "type": "date"
+    },
+    "assignments": {
+      "collection": "assignments",
+      "via": "students",
+      "dominant": true
+    },
+    "classes": {
+      "collection": "classes",
+      "via": "students",
+      "dominant": true
+    },
+    "passout": {
+      "type": "date"
+    }
+  }
+}
